@@ -1,0 +1,81 @@
+
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0Y2FjN2Q3ZGQzYTIwNDZjYTNiNjlmMiIsImlhdCI6MTY5MTAxMTAzNH0.V93qG_0aLs6iTQbC95sA5GrkoMzvOFL1DgQf6Dg-EcM
+###
+
+###Register
+POST http://localhost:3000/api/user/register
+Content-Type: application/json
+
+{
+    "name":"peter",
+    "email":"peterkhalil191@gmail.com",
+    "password":"pP1&12lkgd"
+}
+
+###Login
+POST http://localhost:3000/api/user/login
+Content-Type: application/json
+
+{
+   "email":"rikokamil97@gmail.com",
+    "password":"pP1&12lkgd"
+}
+
+###Logout
+GET http://localhost:3000/api/user/logout
+Authorization: Bearer {{token}}
+
+###GetUser
+GET http://localhost:3000/api/user
+Authorization: Bearer {{token}}
+
+
+###resendVerificationEmail
+GET http://localhost:3000/api/user/resend-verification-email
+Authorization: Bearer {{token}}
+
+
+###UpdateUser
+PUT http://localhost:3000/api/user
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+    "name":"Smsmll",
+    "email":"peter.khalil.fahmy@gmail.com"
+}
+
+###DeleteUser
+DELETE http://localhost:3000/api/user
+Authorization: Bearer {{token}}
+
+
+###Tasks endpoints
+###CreateTask
+POST http://localhost:3000/api/task
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+    "name":" task",
+    "description":"m",
+    "priority":"medium",
+    "deadline":"2023-10-30T00:00:00.000Z"
+}
+
+###GetUserTasks
+GET http://localhost:3000/api/task
+Authorization: Bearer {{token}}
+
+###UpdateUserTask
+PUT http://localhost:3000/api/task/64ca9fd1b8737cfc020916cc
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+    "priority":"low"
+}
+
+###DeleteUserTask
+DELETE http://localhost:3000/api/task/64caa0bfdbb5baa9b5203fe2
+Authorization: Bearer {{token}}
